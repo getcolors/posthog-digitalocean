@@ -23,6 +23,10 @@ compute-prevent-destroy: true
 
 # --- PostHog Stack -----------------------------------------------------------
 
+# The owner account provisioned on every converge; its password is
+# COLORS_PAR_POSTHOG_ADMIN_PASSWORD.
+posthog-admin-email: claude@ululi.it
+
 posthog-host: posthog.bigconfig.online
 # The application and plugin server images must come from one commit: they
 # share a Postgres schema, and a floating tag on either side means the node
