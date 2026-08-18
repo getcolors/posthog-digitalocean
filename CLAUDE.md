@@ -29,8 +29,15 @@ The root `green` is a copy, not a symlink. After a Package Skill update copy
 
 ## Verification
 
-Real create performs HTTPS health check, synthetic event capture, and backup service
-verification.
+A real create verifies the deployment rather than the gate, because this stack
+fails by reporting success. It checks HTTPS health **with a valid certificate**,
+posts a synthetic event and polls ClickHouse until the row appears, asks PostHog
+whether Celery is alive and whether any async migration is pending, and confirms
+the backup by finding a fresh object in R2.
+
+A 200 from `/capture/` means the event reached the capture service and nothing
+more; the failure this stack produces most often is an accepted event that is
+never stored. Do not treat a health check or a status code as evidence.
 
 ## Git
 
