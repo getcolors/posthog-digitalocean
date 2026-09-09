@@ -1,6 +1,6 @@
 # Shared compute rollout
 
-Installed package: `getcolors/posthog` at published revision `1f23d7f3fc9a350708c9e8d565c936d534b8dad9`.
+Installed package: `getcolors/posthog` at published revision `53544325bad1e85aded5b5d123b0f1d8f534b8cb`.
 The installed skill directories and root launchers were copied from a verified
 Skills CLI installation of that revision. This remains a manual installation; no lockfile was invented.
 
@@ -27,4 +27,4 @@ application health.
 
 Outstanding live-operation prerequisites:
 
-- Before any real operation, configure ssh-private-key-path for the existing external provider key. No identity path was guessed and no key mode was changed.
+- Before any real operation, verify working operator or SSH-agent access for the existing external provider key, or set ssh-private-key-path to its matching identity. No identity path was guessed and no key mode was changed.
